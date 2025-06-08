@@ -1,0 +1,120 @@
+2025-06-08 22:01:14 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:01:14 [INFO] Question: Does this process needs a tool to run ? What is the weather like today? available tools are []. Yes or No ? (one word answer)
+Answer:
+2025-06-08 22:01:55 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:01:55 [INFO] Question: What is the weather like today?
+Answer:
+2025-06-08 22:02:39 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:02:39 [INFO] Question: Does this process needs a tool to run ? What is the time right now ? available tools are []. Yes or No ? (one word answer)
+Answer:
+2025-06-08 22:02:43 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:02:43 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:09:36 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:09:36 [INFO] Question: Does this process needs a tool to run ? What is the time right now ? available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7bde15dacd60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7bde15dace00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7bde15dacea0>)]. Yes or No ? (one word answer)
+Answer:
+2025-06-08 22:10:06 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:10:06 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:35:19 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:35:19 [INFO] Question: Yes or No ? (one word answer). Does this process needs a tool to run ? What is the time right now ? available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7276fa5b0d60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7276fa5b0e00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7276fa5b0ea0>)].
+Answer:
+2025-06-08 22:35:22 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:35:22 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:37:21 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:37:21 [INFO] Question: Yes or No ? (one word answer). Does this process needs a tool to run ? What is the time right now ? available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7b278090cd60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7b278090ce00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7b278090cea0>)].
+Answer:
+2025-06-08 22:37:22 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:37:22 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:38:51 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:38:51 [INFO] Question: Yes or No ? (one word answer). Does this process needs a tool to run ? What is the time right now ? available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x76d62d978e00>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x76d62d978ea0>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x76d62d978f40>)].
+Answer:
+2025-06-08 22:38:54 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:38:54 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:39:49 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:39:49 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x701d329a8e00>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x701d329a8ea0>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x701d329a8f40>)].
+Answer:
+2025-06-08 22:39:50 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:39:50 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:40:11 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:40:11 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7a54e39acd60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7a54e39ace00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7a54e39acea0>)].
+Answer:
+2025-06-08 22:40:12 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:40:12 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:44:15 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:44:15 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7546dabb4d60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7546dabb4e00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7546dabb4ea0>)].
+Answer:
+2025-06-08 22:44:16 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:44:16 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:44:41 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:44:41 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x77deb030cd60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x77deb030ce00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x77deb030cea0>)].
+Answer:
+2025-06-08 22:47:33 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:47:33 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7bf8455b0d60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7bf8455b0e00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7bf8455b0ea0>)].
+Answer:
+2025-06-08 22:52:56 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:52:56 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x73493ed78e00>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x73493ed78ea0>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x73493ed78f40>)].
+Answer:
+2025-06-08 22:55:44 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:55:44 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x790389710d60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x790389710e00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x790389710ea0>)].
+Answer:
+2025-06-08 22:55:46 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:55:46 [INFO] Question: What is the time right now ?
+Answer:
+2025-06-08 22:55:58 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-08 22:55:58 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:What is the time right now ?] available tools are [StructuredTool(name='reverse_string', description='Reverses the given string.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'reverse_stringArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x70c49d1a4d60>), StructuredTool(name='count_words', description='Counts the number of words in a sentence.', args_schema={'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'count_wordsArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x70c49d1a4e00>), StructuredTool(name='current_time', description='Returns the current time.', args_schema={'properties': {}, 'title': 'current_timeArguments', 'type': 'object'}, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x70c49d1a4ea0>)].
+Answer:
