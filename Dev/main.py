@@ -6,7 +6,7 @@ import rcore
 
 class RigelCore:
     def __init__(self):
-        self.syslog = Syslog(log_file="rigel_core.log")
+        self.syslog = Syslog(log_file="logs/rigel_core.log")
         self.prefrontal_cortex = rcore.PreFrontalCortex()
         self.agentic_cortex = self.prefrontal_cortex.agentic_cortex  # Use the same AgenticCortex instance
         self.language_cortex = rcore.LanguageCortex()
@@ -37,7 +37,7 @@ class RigelCore:
 class VocalBox:
     # TODO
     def __init__(self):
-        self.syslog = Syslog(log_file="vocal_box.log")
+        self.syslog = Syslog(log_file="logs/vocal_box.log")
         self.syslog.log("VocalBox initialized successfully.")
         # Initialize any other components or configurations needed for VocalBox
 

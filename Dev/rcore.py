@@ -17,7 +17,7 @@ from syslog import Syslog
 
 class PreFrontalCortex:
     def __init__(self):
-        self.syslog = Syslog(log_file="preftrontal_cortex.log")
+        self.syslog = Syslog(log_file="logs/preftrontal_cortex.log")
         self.syslog.log("PreFrontalCortex initialized.", level="INFO")
         self.executor = None
         self.language_cortex = LanguageCortex()
@@ -60,7 +60,7 @@ class AgenticCortex:
         self.model = ChatOllama(model=model_name)
         self.tools = []
         self._initialized = False
-        self.syslog = Syslog(log_file="agentic_cortex.log")
+        self.syslog = Syslog(log_file="logs/agentic_cortex.log")
         self.syslog.log(f"AgenticCortex initialized with model: {model_name}", level="INFO")
         self.syslog.log("AgenticCortex ready to run.", level="INFO")
 
@@ -98,7 +98,7 @@ class LanguageCortex:
         self.working_memory_collection = self.chroma_client.get_or_create_collection(name="working_memory")
         self.embedding_function = DefaultEmbeddingFunction()
         self.model = 'Rigel'
-        self.syslog = Syslog(log_file="language_cortex.log")
+        self.syslog = Syslog(log_file="logs/language_cortex.log")
 
     def RAG(self, input, mode):
         if mode == "input":
