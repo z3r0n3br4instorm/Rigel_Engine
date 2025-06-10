@@ -20,18 +20,8 @@ class RigelCore:
 
     async def getInput(self, input):
         self.syslog.log(f"Received input: {input}")
-        needs_tool = await self.prefrontal_cortex.checkInput(input)
-        
-        if needs_tool:
-            self.syslog.log("Input requires tool invocation.")
-            rcore.AgenticCortex()
-            agent = await self.agentic_cortex.run()
-            response = await self.agentic_cortex.invoke(agent, input)
-            self.syslog.log(f"Tool invocation response: {response}")
-            return agent
-        else:
-            self.syslog.log("Input does not require tool invocation.")
-            return self.language_cortex.ollama_call(input, RAG=False)
+        output = await self.prefrontal_cortex.checkInput(input)
+        return output
         
 
 class VocalBox:
@@ -52,7 +42,7 @@ async def main():
         rigel_core.syslog.log("RigelCore and VocalBox are ready to use.")
         
         # Example usage
-        input_text = "What is the time right now ?"
+        input_text = "Find and open a file called ztos_home_4.1_beta.py. open it with vscode"
         response = await rigel_core.getInput(input_text)
         rigel_core.syslog.log(f"Response: {response}")
         print(response)

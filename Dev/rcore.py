@@ -33,28 +33,43 @@ class PreFrontalCortex:
     async def initialize(self):
         if not self._tools_initialized:
             self.syslog.log("Initializing tools in AgenticCortex...", level="INFO")
-            await self.agentic_cortex.initialize_tools()
+            await self.agentic_cortex.show_tools()
             self._tools_initialized = True
             self.syslog.log("Tools initialized successfully.", level="INFO")
             
     async def checkInput(self, input):
         if not self._tools_initialized:
+            self.syslog.log("Tools not initialized, initializing now...", level="INFO")
             await self.initialize()
             
         tools_list = self.agentic_cortex.tools
-        
-        innermonologue_prompt = f"Yes or No ? (one word answer). Does this input needs a tool to run ? [input:{input}] available tools are {tools_list}."
+        tool_names = [tool.name for tool in tools_list] if tools_list else [] # Yea this is pretty in-efficient i admit
+        # What ? You got a more efficient way ?. Open a PR then instead of whining about it
+        innermonologue_prompt = f"Yes or No ? (one word answer). Does this input needs a tool to run ? [input:{input}] available tools are {tool_names}."
         self.syslog.log(f"Checking input: {innermonologue_prompt}", level="INFO")
         response = self.monologue(innermonologue_prompt, RAG=False)
         self.syslog.log(f"Monologue response: {response.strip().replace('.','')}", level="INFO")
         # Tooo lazy to do NLP, sue me
         if re.search(r'\byes\b', response.lower()):
             self.syslog.log("Input requires tool invocation.", level="INFO")
-            return True
+            needs_tool =  True
         else:
             self.syslog.log("Input does not require tool invocation.", level="INFO")
-            return False
+            needs_tool =  False
 
+        if needs_tool:
+            self.syslog.log("Invocation running")
+            response = await self.agentic_cortex.initialize_tools(message=input)
+            self.syslog.log(f"Tool invocation response: {response}")
+            for message in reversed(response):
+                if hasattr(message, 'content') and message.__class__.__name__ == 'AIMessage':
+                    return message.content
+            return str(response)
+        else:
+            self.syslog.log("Invocation skipping")
+            return self.language_cortex.ollama_call(input, RAG=False)
+
+# Cool name huh
 class AgenticCortex:
     def __init__(self, model_name="Rigel"):
         self.model = ChatOllama(model=model_name)
@@ -64,32 +79,57 @@ class AgenticCortex:
         self.syslog.log(f"AgenticCortex initialized with model: {model_name}", level="INFO")
         self.syslog.log("AgenticCortex ready to run.", level="INFO")
 
-    async def initialize_tools(self):
+    async def show_tools(self):
         if not self._initialized:
-            self.syslog.log("Initializing tools...", level="INFO")
+            self.syslog.log("Tools not initialized, initializing now...", level="INFO")
             server_params = StdioServerParameters(
                 command="python",
                 args=["rigel_mcp.py"],
             )
-            
             async with stdio_client(server_params) as (read, write):
                 async with ClientSession(read, write) as session:
                     await session.initialize()
                     self.tools = await load_mcp_tools(session)
                     self._initialized = True
                     self.syslog.log(f"Tools initialized: {len(self.tools)} tools loaded", level="INFO")
-        
         return self.tools
 
-    async def run(self):
+    async def initialize_tools(self, message):
+        server_params = StdioServerParameters(
+            command="python",
+            args=["rigel_mcp.py"],
+        )
+        
         if not self._initialized:
-            await self.initialize_tools()
-        agent = create_react_agent(self.model, self.tools)
-        return agent
+            self.syslog.log("Initializing tools...", level="INFO")
             
-    async def invoke(self, agent, message):
-        res = await agent.ainvoke({"messages": message})
-        return res
+        async with stdio_client(server_params) as (read, write):
+            async with ClientSession(read, write) as session:
+                await session.initialize()
+                self.tools = await load_mcp_tools(session)
+                self._initialized = True
+                self.syslog.log(f"Tools initialized: {len(self.tools)} tools loaded", level="INFO")
+                agent = create_react_agent(self.model, self.tools)
+                res = await agent.ainvoke({"messages": message})
+                self.syslog.log(f"Raw agent response: {res}", level="INFO")
+                return res['messages']
+
+    #     # self.tools = await load_mcp_tools(session)
+    #     # self._initialized = True
+    #     # self.syslog.log(f"Tools initialized: {len(self.tools)} tools loaded", level="INFO")
+
+
+    #     return self.tools
+
+    # async def run(self):
+    #     if not self._initialized:
+    #         await self.initialize_tools()
+    #     agent = create_react_agent(self.model, self.tools)
+    #     return agent
+            
+    # async def invoke(self, agent, message):
+    #     res = await agent.ainvoke({"messages": message})
+    #     return res
     
 class LanguageCortex:
     def __init__(self, chroma_client=chromadb.PersistentClient(path="chromadb"), memory_collection_name="rigel_memory",research_collection_name="rigel_research"):
