@@ -1,5 +1,8 @@
 from mcp.server.fastmcp import FastMCP
+import os
+import mimetypes
 mcp = FastMCP("RigelTools")
+
 @mcp.tool()
 def execute_system_command(command: str) -> str:
     """Execute Commands in System Level."""
@@ -55,6 +58,60 @@ def execute_system_command(command: str) -> str:
         return "Error: Permission denied. Command may require elevated privileges."
     except Exception as e:
         return f"Error executing command: {str(e)}"
+    
+@mcp.tool()
+def open_file(file_path: str, line_number: int = None) -> str:
+    try:
+        if not os.path.exists(file_path):
+            return f"Error: File '{file_path}' does not exist"
+        
+        file_size = os.path.getsize(file_path)
+        mime_type, _ = mimetypes.guess_type(file_path)
+        file_extension = os.path.splitext(file_path)[1].lower()
+        
+        language_map = {
+            '.py': 'python', '.js': 'javascript', '.ts': 'typescript',
+            '.html': 'html', '.css': 'css', '.json': 'json',
+            '.md': 'markdown', '.txt': 'text', '.sh': 'bash',
+            '.yml': 'yaml', '.yaml': 'yaml', '.xml': 'xml',
+            '.sql': 'sql', '.cpp': 'cpp', '.c': 'c', '.java': 'java'
+        }
+        
+        language = language_map.get(file_extension, 'text')
+        
+        try:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                lines = file.readlines()
+        except UnicodeDecodeError:
+            return f"Error: Cannot read '{file_path}' - binary file or encoding issue"
+        
+        result = f"📁 {os.path.basename(file_path)} ({language})\n"
+        result += f"📍 {file_path}\n"
+        result += f"📊 {len(lines)} lines, {file_size} bytes\n"
+        result += "─" * 50 + "\n"
+        
+        max_lines = min(100, len(lines))
+        line_num_width = len(str(max_lines))
+        
+        for i, line in enumerate(lines[:max_lines], 1):
+            line_prefix = f"{i:>{line_num_width}} │ "
+            if line_number and i == line_number:
+                result += f"➤ {line_prefix}{line.rstrip()}\n"
+            else:
+                result += f"  {line_prefix}{line.rstrip()}\n"
+        
+        if len(lines) > 100:
+            result += f"\n... ({len(lines) - 100} more lines)\n"
+        result += "─" * 50 + "\n"
+        if line_number and line_number <= len(lines):
+            result += f"🎯 Focused on line {line_number}\n"
+        
+        return result
+        
+    except PermissionError:
+        return f"Error: Permission denied accessing '{file_path}'"
+    except Exception as e:
+        return f"Error opening file '{file_path}': {str(e)}"
     
 @mcp.tool()
 def count_words(text: str) -> int:

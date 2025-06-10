@@ -2,15 +2,19 @@ import os
 import sys
 from syslog import Syslog
 from datetime import datetime, timedelta
+from voice_recognition_n_synth import Synthesizer
+
 import rcore
 
 class RigelCore:
     def __init__(self):
         self.syslog = Syslog(log_file="logs/rigel_core.log")
         self.prefrontal_cortex = rcore.PreFrontalCortex()
-        self.agentic_cortex = self.prefrontal_cortex.agentic_cortex  # Use the same AgenticCortex instance
+        self.agentic_cortex = self.prefrontal_cortex.agentic_cortex
         self.language_cortex = rcore.LanguageCortex()
         self.syslog.log("RigelCore initialized successfully.")
+        
+        
         
     async def initialize(self):
         """Initialize the system components"""
@@ -35,17 +39,16 @@ class VocalBox:
 async def main():
     try:
         rigel_core = RigelCore()
-        vocal_box = VocalBox()
-        
-        # Initialize components before use
+        synth = Synthesizer()
         await rigel_core.initialize()
-        rigel_core.syslog.log("RigelCore and VocalBox are ready to use.")
+        rigel_core.syslog.log("RigelCore and Synthesizer are ready to use.")
         
         # Example usage
-        input_text = "Find and open a file called ztos_home_4.1_beta.py. open it with vscode"
-        response = await rigel_core.getInput(input_text)
-        rigel_core.syslog.log(f"Response: {response}")
-        print(response)
+        while True:
+            input_text = input("Enter your input: ")
+            response = await rigel_core.getInput(input_text)
+            rigel_core.syslog.log(f"Response: {response}")
+            synth.run_synth(f"{response}")
     except Exception as e:
         print(f"Error in main: {str(e)}")
         import traceback

@@ -13,7 +13,7 @@ import chromadb
 from datetime import datetime, timedelta
 import time
 from syslog import Syslog
-
+from db_init import VectorDB
 
 class PreFrontalCortex:
     def __init__(self):
@@ -25,6 +25,9 @@ class PreFrontalCortex:
         self.monologue = self.language_cortex.ollama_call
         self._tools_initialized = False
         self.syslog.log("PreFrontalCortex ready to run.", level="INFO")
+        self.syscom_db = VectorDB()
+        self.syscom_db.loadDataToVectorDB()
+        self.syslog.log("Vector DB Containing System Commands Loaded & Started successfully !")
 
     def set_executor(self, executor):
         self.executor = executor
@@ -45,12 +48,39 @@ class PreFrontalCortex:
         tools_list = self.agentic_cortex.tools
         tool_names = [tool.name for tool in tools_list] if tools_list else [] # Yea this is pretty in-efficient i admit
         # What ? You got a more efficient way ?. Open a PR then instead of whining about it
-        innermonologue_prompt = f"Yes or No ? (one word answer). Does this input needs a tool to run ? [input:{input}] available tools are {tool_names}."
+        
+        # Create a more detailed prompt with tool descriptions
+        tool_descriptions = []
+        for tool in tools_list:
+            if hasattr(tool, 'description') and tool.description:
+                tool_descriptions.append(f"- {tool.name}: {tool.description}")
+            else:
+                tool_descriptions.append(f"- {tool.name}")
+        
+        tool_info = "\n".join(tool_descriptions) if tool_descriptions else "No tools available"
+        
+        innermonologue_prompt = f"""ANALYZE THIS INPUT CAREFULLY:
+                                    Input: "{input}"
+
+                                    Available tools:
+                                    {tool_info}
+
+                                    Answer YES if the input requests ANY of the following:
+                                    - System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+                                    - File operations (open, read, write, create, edit files)
+                                    - Getting current time/date
+                                    - Word counting or text analysis
+                                    - Any task that requires external tools or system interaction
+
+                                    Answer NO only if it's a simple conversational question that doesn't need tools.
+
+                                    YES or NO (one word only):"""
         self.syslog.log(f"Checking input: {innermonologue_prompt}", level="INFO")
         response = self.monologue(innermonologue_prompt, RAG=False)
         self.syslog.log(f"Monologue response: {response.strip().replace('.','')}", level="INFO")
-        # Tooo lazy to do NLP, sue me
-        if re.search(r'\byes\b', response.lower()):
+
+        response_clean = response.strip().lower().replace('.', '').replace(':', '')
+        if re.search(r'\b(yes|y|true|1)\b', response_clean) or response_clean.startswith('yes'):
             self.syslog.log("Input requires tool invocation.", level="INFO")
             needs_tool =  True
         else:
@@ -58,6 +88,17 @@ class PreFrontalCortex:
             needs_tool =  False
 
         if needs_tool:
+            innermonologue_prompt = f"Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:{input}"
+            response = self.monologue(innermonologue_prompt, RAG=False)
+            response_clean = response.strip().lower().replace('.', '').replace(':', '')
+            if re.search(r'\b(yes|y|true|1)\b', response_clean) or response_clean.startswith('yes'):
+                self.syslog.log(f"Monologue response: {response.strip().replace('.','')}", level="INFO")
+                self.syslog.log("Input requires syscom context", level="INFO")
+                context = self.syscom_db.retriever(input)
+                input = input + str(f"Command Guide: {context}")
+            else:
+                self.syslog.log("Input does not require syscom context", level="INFO")
+            # Removed the incorrect "needs_tool = False" line that was causing tools to be bypassed
             self.syslog.log("Invocation running")
             response = await self.agentic_cortex.initialize_tools(message=input)
             self.syslog.log(f"Tool invocation response: {response}")

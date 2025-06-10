@@ -228,3 +228,481 @@ Answer:
 -------------
 2025-06-10 09:26:54 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Find and open a file called ztos_home_4.1_beta.py. open it with vscode] available tools are ['execute_system_command', 'count_words', 'current_time'].
 Answer:
+2025-06-10 10:01:56 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:01:56 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Find and open a file called ztos_home_4.1_beta.py. open it with vscode] available tools are ['execute_system_command', 'count_words', 'current_time'].
+Answer:
+2025-06-10 10:02:04 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:02:04 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:Find and open a file called ztos_home_4.1_beta.py. open it with vscode
+Answer:
+2025-06-10 10:06:19 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:06:19 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:open a file called rcore.py] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 10:06:20 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:06:20 [INFO] Question: open a file called rcore.py
+Answer:
+2025-06-10 10:06:33 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:06:33 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:open a file called rcore.py] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 10:06:34 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:06:34 [INFO] Question: open a file called rcore.py
+Answer:
+2025-06-10 10:06:55 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:06:55 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:open a file called rcore.py] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 10:06:57 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 10:06:57 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:open a file called rcore.py
+Answer:
+2025-06-10 12:42:18 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:42:18 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Can you tell  me what's inside the rcore file ?] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:43:00 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:43:00 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:Can you tell  me what's inside the rcore file ?
+Answer:
+2025-06-10 12:43:33 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:43:33 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Can you tell  me what's inside the rcore file ?] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:43:38 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:43:38 [INFO] Question: Can you tell  me what's inside the rcore file ?
+Answer:
+2025-06-10 12:44:19 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:44:19 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Can you tell  me what's inside the rcore file ?] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:44:21 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:44:21 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:Can you tell  me what's inside the rcore file ?
+Answer:
+2025-06-10 12:44:59 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:44:59 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Can you tell  me what's inside the rcore file ?] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:45:00 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:45:00 [INFO] Question: Can you tell  me what's inside the rcore file ?
+Answer:
+2025-06-10 12:45:59 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:45:59 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Hi there, introduce yourself] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:46:00 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:46:00 [INFO] Question: Hi there, introduce yourself
+Answer:
+2025-06-10 12:47:39 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:47:39 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Hi there, introduce yourself] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:47:40 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:47:40 [INFO] Question: Hi there, introduce yourself
+Answer:
+2025-06-10 12:48:35 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:48:35 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Hi there, introduce yourself] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:48:37 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:48:37 [INFO] Question: Hi there, introduce yourself
+Answer:
+2025-06-10 12:49:41 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:49:41 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Hello there, who are you ?] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:49:42 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:49:42 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:Hello there, who are you ?
+Answer:
+2025-06-10 12:50:07 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:50:07 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Can you tell me what's the meaning of life] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:50:09 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:50:09 [INFO] Question: Can you tell me what's the meaning of life
+Answer:
+2025-06-10 12:51:08 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:51:08 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:open a file called main.py in /home/zerone/Projects/RIGEL_3/Dev use vscode to open] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:51:09 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:51:09 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:open a file called main.py in /home/zerone/Projects/RIGEL_3/Dev use vscode to open
+Answer:
+2025-06-10 12:51:57 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:51:57 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:see what's the most RAM intensive process using commandline] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:51:58 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:51:58 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:see what's the most RAM intensive process using commandline
+Answer:
+2025-06-10 12:52:49 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:52:49 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:what uses most amount of RAM ? use command] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:52:50 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:52:50 [INFO] Question: what uses most amount of RAM ? use command
+Answer:
+2025-06-10 12:53:35 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:53:35 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:use system command tool and check which process use most amount of RAM] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:53:36 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:53:36 [INFO] Question: use system command tool and check which process use most amount of RAM
+Answer:
+2025-06-10 12:54:18 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:54:18 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Run a system command and get the process that uses most amount of RAM] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:54:19 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:54:19 [INFO] Question: Run a system command and get the process that uses most amount of RAM
+Answer:
+2025-06-10 12:54:39 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:54:39 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:open konsole program using commandline] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:54:40 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:54:40 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:open konsole program using commandline
+Answer:
+2025-06-10 12:54:57 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:54:57 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:open firefox] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:54:58 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:54:58 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:open firefox
+Answer:
+2025-06-10 12:55:54 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:55:54 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:Open firefox] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:55:55 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:55:55 [INFO] Question: Open firefox
+Answer:
+2025-06-10 12:56:17 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:56:17 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:open firefox using system commands] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:56:18 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:56:18 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:open firefox using system commands
+Answer:
+2025-06-10 12:57:16 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:57:16 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:play a bell sound, using system commands] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:57:17 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:57:17 [INFO] Question: play a bell sound, using system commands
+Answer:
+2025-06-10 12:57:31 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:57:31 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:use system commands. play bell commandline sound] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:57:32 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:57:32 [INFO] Question: use system commands. play bell commandline sound
+Answer:
+2025-06-10 12:57:54 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:57:54 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:run this command `aplay /usr/share/sounds/alsa/Front_Center.wav`] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:57:54 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:57:54 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:run this command `aplay /usr/share/sounds/alsa/Front_Center.wav`
+Answer:
+2025-06-10 12:58:59 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:58:59 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:run this command paplay /usr/share/sounds/alsa/Front_Center.wav] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:59:00 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:59:00 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:run this command paplay /usr/share/sounds/alsa/Front_Center.wav
+Answer:
+2025-06-10 12:59:46 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:59:46 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:search for a folder named RIGEL Systemwide] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 12:59:47 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 12:59:47 [INFO] Question: search for a folder named RIGEL Systemwide
+Answer:
+2025-06-10 13:00:14 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:00:14 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:use system commands and search for a folder named RIGEL Systemwide] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 13:00:15 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:00:15 [INFO] Question: use system commands and search for a folder named RIGEL Systemwide
+Answer:
+2025-06-10 13:00:34 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:00:34 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:run a command and find a folder called "Rigel"] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 13:00:35 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:00:35 [INFO] Question: run a command and find a folder called "Rigel"
+Answer:
+2025-06-10 13:01:07 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:01:07 [INFO] Question: Yes or No ? (one word answer). Does this input needs a tool to run ? [input:use find command to find a file called RIGEL] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 13:01:08 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:01:08 [INFO] Question: use find command to find a file called RIGEL
+Answer:
+2025-06-10 13:02:50 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:02:50 [INFO] Question: Yes or No ? (one word answer). Do you need to use a tool for this input ? [input:find a file called RIGEL. search for everywhere] available tools are ['execute_system_command', 'open_file', 'count_words', 'current_time'].
+Answer:
+2025-06-10 13:02:51 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:02:51 [INFO] Question: find a file called RIGEL. search for everywhere
+Answer:
+2025-06-10 13:06:05 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:06:05 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+Input: "find a file called RIGEL in my local directory"
+
+Available tools:
+- execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+Answer YES if the input requests ANY of the following:
+- System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+- File operations (open, read, write, create, edit files)
+- Getting current time/date
+- Word counting or text analysis
+- Any task that requires external tools or system interaction
+
+Answer NO only if it's a simple conversational question that doesn't need tools.
+
+YES or NO (one word only):
+Answer:
+2025-06-10 13:06:06 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:06:06 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:find a file called RIGEL in my local directory
+Answer:
+2025-06-10 13:06:40 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:06:40 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+Input: "use find command and try to find the file RIGEL"
+
+Available tools:
+- execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+Answer YES if the input requests ANY of the following:
+- System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+- File operations (open, read, write, create, edit files)
+- Getting current time/date
+- Word counting or text analysis
+- Any task that requires external tools or system interaction
+
+Answer NO only if it's a simple conversational question that doesn't need tools.
+
+YES or NO (one word only):
+Answer:
+2025-06-10 13:06:41 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:06:41 [INFO] Question: use find command and try to find the file RIGEL
+Answer:
+2025-06-10 13:07:08 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:07:08 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+Input: "search a folder called RIGEL, use find command"
+
+Available tools:
+- execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+Answer YES if the input requests ANY of the following:
+- System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+- File operations (open, read, write, create, edit files)
+- Getting current time/date
+- Word counting or text analysis
+- Any task that requires external tools or system interaction
+
+Answer NO only if it's a simple conversational question that doesn't need tools.
+
+YES or NO (one word only):
+Answer:
+2025-06-10 13:07:09 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:07:09 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:search a folder called RIGEL, use find command
+Answer:
+2025-06-10 13:08:32 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:08:32 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+Input: "Turn Keyboard lights off"
+
+Available tools:
+- execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+Answer YES if the input requests ANY of the following:
+- System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+- File operations (open, read, write, create, edit files)
+- Getting current time/date
+- Word counting or text analysis
+- Any task that requires external tools or system interaction
+
+Answer NO only if it's a simple conversational question that doesn't need tools.
+
+YES or NO (one word only):
+Answer:
+2025-06-10 13:08:33 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:08:33 [INFO] Question: Turn Keyboard lights off
+Answer:
+2025-06-10 13:08:50 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:08:50 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+Input: "turn the keyboard lights off. use system commands"
+
+Available tools:
+- execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+Answer YES if the input requests ANY of the following:
+- System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+- File operations (open, read, write, create, edit files)
+- Getting current time/date
+- Word counting or text analysis
+- Any task that requires external tools or system interaction
+
+Answer NO only if it's a simple conversational question that doesn't need tools.
+
+YES or NO (one word only):
+Answer:
+2025-06-10 13:08:51 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:08:51 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:turn the keyboard lights off. use system commands
+Answer:
+2025-06-10 13:09:31 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:09:31 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+Input: "turn off keyboard backlight using brightnessctl"
+
+Available tools:
+- execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+Answer YES if the input requests ANY of the following:
+- System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+- File operations (open, read, write, create, edit files)
+- Getting current time/date
+- Word counting or text analysis
+- Any task that requires external tools or system interaction
+
+Answer NO only if it's a simple conversational question that doesn't need tools.
+
+YES or NO (one word only):
+Answer:
+2025-06-10 13:09:32 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:09:32 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:turn off keyboard backlight using brightnessctl
+Answer:
