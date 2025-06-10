@@ -706,3 +706,59 @@ Answer:
 -------------
 2025-06-10 13:09:32 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:turn off keyboard backlight using brightnessctl
 Answer:
+2025-06-10 13:13:18 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:13:18 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+                                    Input: "Search for the most memory intensive process"
+
+                                    Available tools:
+                                    - execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+                                    Answer YES if the input requests ANY of the following:
+                                    - System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+                                    - File operations (open, read, write, create, edit files)
+                                    - Getting current time/date
+                                    - Word counting or text analysis
+                                    - Any task that requires external tools or system interaction
+
+                                    Answer NO only if it's a simple conversational question that doesn't need tools.
+
+                                    YES or NO (one word only):
+Answer:
+2025-06-10 13:13:20 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:13:20 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:Search for the most memory intensive process
+Answer:
+2025-06-10 13:14:18 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:14:18 [INFO] Question: ANALYZE THIS INPUT CAREFULLY:
+                                    Input: "What is the highest memory intensive process in this OS. im using arch linux"
+
+                                    Available tools:
+                                    - execute_system_command: Execute Commands in System Level.
+- open_file
+- count_words: Counts the number of words in a sentence.
+- current_time: Returns the current time.
+
+                                    Answer YES if the input requests ANY of the following:
+                                    - System/shell commands (ls, cd, mkdir, install, run, execute, etc.)
+                                    - File operations (open, read, write, create, edit files)
+                                    - Getting current time/date
+                                    - Word counting or text analysis
+                                    - Any task that requires external tools or system interaction
+
+                                    Answer NO only if it's a simple conversational question that doesn't need tools.
+
+                                    YES or NO (one word only):
+Answer:
+2025-06-10 13:14:19 [INFO] Combined Memory Context---------
+
+-------------
+2025-06-10 13:14:19 [INFO] Question: Yes or No ? (one word answer). Does this input require a commandline level execution ? prompt:What is the highest memory intensive process in this OS. im using arch linux
+Answer:
