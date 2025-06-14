@@ -3,6 +3,7 @@ import sys
 from syslog import Syslog
 from datetime import datetime, timedelta
 from voice_recognition_n_synth import Synthesizer
+from rcore_online import LanguageCortex_Online
 
 import rcore
 
@@ -12,6 +13,7 @@ class RigelCore:
         self.prefrontal_cortex = rcore.PreFrontalCortex()
         self.agentic_cortex = self.prefrontal_cortex.agentic_cortex
         self.language_cortex = rcore.LanguageCortex()
+        self.language_cortex_online = LanguageCortex_Online()
         self.syslog.log("RigelCore initialized successfully.")
         
         
@@ -20,11 +22,29 @@ class RigelCore:
         """Initialize the system components"""
         self.syslog.log("Initializing Rigel Core components...", level="INFO")
         await self.prefrontal_cortex.initialize()
+        await self.language_cortex_online.initialize()
         self.syslog.log("Rigel Core initialization complete.", level="INFO")
+
+    def check_network(self):
+        """Check if the network is available"""
+        try:
+            import socket
+            socket.create_connection(("www.google.com", 80))
+            self.syslog.log("Network check successful.", level="INFO")
+            return True
+        except OSError:
+            self.syslog.log("Network check failed.", level="ERROR")
+            return False
 
     async def getInput(self, input):
         self.syslog.log(f"Received input: {input}")
-        output = await self.prefrontal_cortex.checkInput(input)
+        if self.check_network():
+            self.syslog.log("Network is available.", level="INFO")
+            output = await self.language_cortex_online.online_call(input, RAG=True)
+        else:
+            self.syslog.log("Network is not available, Accuracy maybe reduced due to local processing /!\"", level="ERROR")
+            output = await self.prefrontal_cortex.checkInput(input)
+        # output = await self.prefrontal_cortex.checkInput(input)
         return output
         
 

@@ -13,7 +13,14 @@ import chromadb
 from datetime import datetime, timedelta
 import time
 from syslog import Syslog
+from voice_recognition_n_synth import Synthesizer
 from db_init import VectorDB
+from groq import Groq
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 class PreFrontalCortex:
     def __init__(self):
@@ -27,6 +34,7 @@ class PreFrontalCortex:
         self.syslog.log("PreFrontalCortex ready to run.", level="INFO")
         self.syscom_db = VectorDB()
         self.syscom_db.loadDataToVectorDB()
+        self.synth = Synthesizer()
         self.syslog.log("Vector DB Containing System Commands Loaded & Started successfully !")
 
     def set_executor(self, executor):
@@ -71,9 +79,12 @@ class PreFrontalCortex:
                                     - Getting current time/date
                                     - Word counting or text analysis
                                     - Any task that requires external tools or system interaction
+                                    Answer NO if the input is a simple conversational question that doesn't need tools.
+                                    - If the input contains you or Rigel, it is a conversational question.
+                                    - If the input is a simple question that can be answered without tools.
+                                    - If the input is a simple question that can be answered with knowledge or memory.
 
                                     Answer NO only if it's a simple conversational question that doesn't need tools.
-
                                     YES or NO (one word only):"""
         self.syslog.log(f"Checking input: {innermonologue_prompt}", level="INFO")
         response = self.monologue(innermonologue_prompt, RAG=False)
@@ -82,6 +93,7 @@ class PreFrontalCortex:
         response_clean = response.strip().lower().replace('.', '').replace(':', '')
         if re.search(r'\b(yes|y|true|1)\b', response_clean) or response_clean.startswith('yes'):
             self.syslog.log("Input requires tool invocation.", level="INFO")
+            self.synth.run_synth("Invoking required tool")
             needs_tool =  True
         else:
             self.syslog.log("Input does not require tool invocation.", level="INFO")
@@ -108,7 +120,7 @@ class PreFrontalCortex:
             return str(response)
         else:
             self.syslog.log("Invocation skipping")
-            return self.language_cortex.ollama_call(input, RAG=False)
+            return self.language_cortex.ollama_call(input, RAG=True)
 
 # Cool name huh
 class AgenticCortex:
@@ -180,6 +192,16 @@ class LanguageCortex:
         self.embedding_function = DefaultEmbeddingFunction()
         self.model = 'Rigel'
         self.syslog = Syslog(log_file="logs/language_cortex.log")
+        self.tools = []
+        self.syslog.log("LanguageCortex initialized successfully.", level="INFO")
+        
+        # Initialize Groq client with proper error handling
+        api_key = os.environ.get("GROQ_API_KEY")
+        if not api_key:
+            self.syslog.log("GROQ_API_KEY not found in environment variables. Please set it in .env file.", level="ERROR")
+            raise ValueError("GROQ_API_KEY not found. Please set it in .env file or environment variables.")
+        
+        self.client = Groq(api_key=api_key)
 
     def RAG(self, input, mode):
         if mode == "input":

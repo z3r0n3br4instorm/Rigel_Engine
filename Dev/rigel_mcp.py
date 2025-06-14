@@ -1,7 +1,9 @@
 from mcp.server.fastmcp import FastMCP
 import os
 import mimetypes
+from voice_recognition_n_synth import Synthesizer
 mcp = FastMCP("RigelTools")
+synth = Synthesizer()
 
 @mcp.tool()
 def execute_system_command(command: str) -> str:
@@ -123,5 +125,73 @@ def current_time() -> str:
     """Returns the current time."""
     from datetime import datetime
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+@mcp.tool()
+def generate_tool(tool_name: str, description: str, parameters: str = "", return_type: str = "str", tool_body: str = "") -> str:
+    """Generate a new tool and add it to the current file.
+    
+    Args:
+        tool_name: Name of the new tool function
+        description: Description of what the tool does
+        parameters: Function parameters (e.g., "text: str, count: int = 1")
+        return_type: Return type annotation (default: "str")
+        tool_body: The actual implementation code of the tool
+    
+    Returns:
+        Status message indicating success or failure
+    """
+    import re
+    
+    # Validate tool name
+    if not re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', tool_name):
+        return f"Error: Invalid tool name '{tool_name}'. Must be a valid Python identifier."
+    
+    # Get the current file path
+    current_file = __file__
+    
+    try:
+        # Read the current file
+        with open(current_file, 'r', encoding='utf-8') as file:
+            content = file.read()
+        # Check if tool already exists
+        if f"def {tool_name}(" in content:
+            return f"Error: Tool '{tool_name}' already exists in the file."
+        
+        # Generate the new tool code
+        if not tool_body:
+            tool_body = f'    """Generated tool: {description}"""\n    return "Tool {tool_name} executed successfully"'
+        else:
+            # Ensure proper indentation
+            tool_body = '\n'.join('    ' + line if line.strip() else line for line in tool_body.split('\n'))
+        
+        new_tool = f"""
+@mcp.tool()
+def {tool_name}({parameters}) -> str:
+    \"\"\"{description}\"\"\"
+{tool_body}
+"""
+        
+        # Find the position to insert the new tool (before the if __name__ == "__main__" block)
+        if_main_pattern = r'\nif __name__ == "__main__":'
+        match = re.search(if_main_pattern, content)
+        
+        if match:
+            # Insert before the if __name__ == "__main__" block
+            insert_pos = match.start()
+            new_content = content[:insert_pos] + new_tool + content[insert_pos:]
+        else:
+            # If no if __name__ == "__main__" block found, append at the end
+            new_content = content.rstrip() + new_tool + '\n'
+        
+        # Write the updated content back to the file
+        with open(current_file, 'w', encoding='utf-8') as file:
+            file.write(new_content)
+        
+        return f"✅ Successfully generated and added tool '{tool_name}' to {current_file}"
+        
+    except Exception as e:
+        return f"Error generating tool: {str(e)}"
+
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")
